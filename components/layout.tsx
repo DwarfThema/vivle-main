@@ -9,7 +9,7 @@ export default function Layout({ children, seoTitle }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>{seoTitle}-VivlePark</title>
+        <title>{`${seoTitle}-VivlePark`}</title>
         <meta content="Vivle-Thema" property="og:title" />
         <meta content="//www.vivle-thema.vercel.app/" property="og:url" />
         <meta content="VivleThema 3D Interactive" property="og:description" />
