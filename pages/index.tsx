@@ -1,14 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 import Layout from "../components/layout";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  Variants,
-} from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import UseFollowPointer from "../components/useFollowPointer";
 
@@ -48,6 +40,8 @@ export default function Home() {
   const enableRef = useRef(true);
   const TOTAL_PAGE = 5;
 
+  const [page, setPage] = useState<number>(0);
+
   useEffect(() => {
     window.addEventListener("wheel", (e) => changePage(e));
 
@@ -59,17 +53,20 @@ export default function Home() {
           pageRef.current < TOTAL_PAGE - 1
         ) {
           pageRef.current += 1;
+          setPage(page + 1);
+
           console.log(pageRef.current);
 
           setTimeout(() => {
             enableRef.current = true;
             console.log("페이지 넘길 수 있음");
-          }, 1000);
+          }, 500);
 
           enableRef.current = false;
         }
         if (e.deltaY <= 0 && e.deltaY >= -30 && pageRef.current > 0) {
           pageRef.current -= 1;
+          setPage(page - 1);
           console.log(pageRef.current);
 
           setTimeout(() => {
@@ -80,7 +77,7 @@ export default function Home() {
         }
       }
     }
-  }, [pageRef.current]);
+  }, [pageRef.current, page]);
 
   return (
     <Layout seoTitle="VivlePark">
@@ -95,51 +92,78 @@ export default function Home() {
         }}
       />
       <div className="h-screen text-white">
-        <motion.div
-          className="h-full w-full bg-yellow-300 absolute top-0"
-          variants={mainBoxVariants}
-          animate={
-            pageRef.current === 4 ? "open" : pageRef.current < 4 ? "down" : "up"
-          }
-        >
-          4
-        </motion.div>
-        <motion.div
-          className="h-full w-full bg-slate-400 absolute top-0"
-          variants={mainBoxVariants}
-          animate={
-            pageRef.current === 3 ? "open" : pageRef.current < 3 ? "down" : "up"
-          }
-        >
-          3
-        </motion.div>
-        <motion.div
-          className="h-full w-full bg-green-400 absolute top-0"
-          variants={mainBoxVariants}
-          animate={
-            pageRef.current === 2 ? "open" : pageRef.current < 2 ? "down" : "up"
-          }
-        >
-          2
-        </motion.div>
-        <motion.div
-          className="h-full w-full bg-blue-400 absolute top-0"
-          variants={mainBoxVariants}
-          animate={
-            pageRef.current === 1 ? "open" : pageRef.current < 1 ? "donw" : "up"
-          }
-        >
-          1
-        </motion.div>
-        <motion.div
-          className="h-screen w-screen bg-red-400 absolute top-0"
-          variants={mainBoxVariants}
-          animate={
-            pageRef.current === 0 ? "open" : pageRef.current < 0 ? "null" : "up"
-          }
-        >
-          0
-        </motion.div>
+        <AnimatePresence custom={page}>
+          <motion.div
+            key="4"
+            className="h-full w-full bg-yellow-300 absolute top-0"
+            variants={mainBoxVariants}
+            animate={
+              pageRef.current === 4
+                ? "open"
+                : pageRef.current < 4
+                ? "down"
+                : "up"
+            }
+          >
+            4
+          </motion.div>
+          <motion.div
+            key="3"
+            className="h-full w-full bg-slate-400 absolute top-0"
+            variants={mainBoxVariants}
+            animate={
+              pageRef.current === 3
+                ? "open"
+                : pageRef.current < 3
+                ? "down"
+                : "up"
+            }
+          >
+            3
+          </motion.div>
+          <motion.div
+            key="2"
+            className="h-full w-full bg-green-400 absolute top-0"
+            variants={mainBoxVariants}
+            animate={
+              pageRef.current === 2
+                ? "open"
+                : pageRef.current < 2
+                ? "down"
+                : "up"
+            }
+          >
+            2
+          </motion.div>
+          <motion.div
+            key="1"
+            className="h-full w-full bg-blue-400 absolute top-0"
+            variants={mainBoxVariants}
+            animate={
+              pageRef.current === 1
+                ? "open"
+                : pageRef.current < 1
+                ? "donw"
+                : "up"
+            }
+          >
+            1
+          </motion.div>
+          <motion.div
+            key="0"
+            className="h-screen w-screen bg-red-400 absolute top-0"
+            variants={mainBoxVariants}
+            animate={
+              pageRef.current === 0
+                ? "open"
+                : pageRef.current < 0
+                ? "null"
+                : "up"
+            }
+          >
+            0
+          </motion.div>
+        </AnimatePresence>
       </div>
     </Layout>
   );
