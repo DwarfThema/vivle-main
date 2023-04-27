@@ -25,7 +25,6 @@ const Header = () => {
         <div className="absolute flex items-center">
           <Image
             src={WhiteLogo}
-            width={230}
             alt="VivlePark"
             className="max-h-10 max-w-fit sm:max-h-6 sm: no-drag "
           />
