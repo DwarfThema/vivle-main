@@ -16,6 +16,8 @@ module.exports = {
       body: ['"DM Sans"', "sans-serif"],
     },
     colors: {
+      white: "#FFFFFF",
+      black: "#000000",
       main: {
         base: "#2D31FA",
         deeper: "#051367",

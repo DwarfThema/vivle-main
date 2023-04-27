@@ -1,23 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Home_1 from "./pages/home_1";
+import Content_1 from "./pages/content_1";
 
 const IndexPage = () => {
-  const [visibleDiv, setVisibleDiv] = useState("A");
+  const [visibleDiv, setVisibleDiv] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [mouseDownY, setMouseDownY] = useState<number | null>(null);
+  const [dragDistance, setDragDistance] = useState(0);
 
+  // mouse Click event
   const handleClickDown = () => {
-    if (visibleDiv === "A") setVisibleDiv("B");
-    else if (visibleDiv === "B") setVisibleDiv("C");
-    else if (visibleDiv === "C") setVisibleDiv("D");
+    if (visibleDiv === 0) setVisibleDiv(1);
+    else if (visibleDiv === 1) setVisibleDiv(2);
+    else if (visibleDiv === 2) setVisibleDiv(3);
+    else if (visibleDiv === 3) setVisibleDiv(4);
   };
 
   const handleClickUp = () => {
-    if (visibleDiv === "D") setVisibleDiv("C");
-    else if (visibleDiv === "C") setVisibleDiv("B");
-    else if (visibleDiv === "B") setVisibleDiv("A");
+    if (visibleDiv === 4) setVisibleDiv(3);
+    else if (visibleDiv === 3) setVisibleDiv(2);
+    else if (visibleDiv === 2) setVisibleDiv(1);
+    else if (visibleDiv === 1) setVisibleDiv(0);
   };
 
+  // wheel Event
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     event.preventDefault();
     if (isScrolling) return;
@@ -25,13 +32,15 @@ const IndexPage = () => {
     setTimeout(() => setIsScrolling(false), 1000);
 
     if (event.deltaY > 0) {
-      if (visibleDiv === "A") setVisibleDiv("B");
-      else if (visibleDiv === "B") setVisibleDiv("C");
-      else if (visibleDiv === "C") setVisibleDiv("D");
+      if (visibleDiv === 0) setVisibleDiv(1);
+      else if (visibleDiv === 1) setVisibleDiv(2);
+      else if (visibleDiv === 2) setVisibleDiv(3);
+      else if (visibleDiv === 3) setVisibleDiv(4);
     } else {
-      if (visibleDiv === "D") setVisibleDiv("C");
-      else if (visibleDiv === "C") setVisibleDiv("B");
-      else if (visibleDiv === "B") setVisibleDiv("A");
+      if (visibleDiv === 4) setVisibleDiv(3);
+      else if (visibleDiv === 3) setVisibleDiv(2);
+      else if (visibleDiv === 2) setVisibleDiv(1);
+      else if (visibleDiv === 1) setVisibleDiv(0);
     }
   };
 
@@ -46,6 +55,64 @@ const IndexPage = () => {
     };
   }, [handleWheel]);
 
+  // drag n drop Event (desktop / mobile)
+
+  const handleMouseDown = (event: React.MouseEvent) => {
+    setMouseDownY(event.clientY);
+  };
+
+  const handleMouseUp = (event: React.MouseEvent) => {
+    handleDrag(event.clientY);
+  };
+
+  const handleTouchStart = (event: React.TouchEvent) => {
+    setMouseDownY(event.touches[0].clientY);
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent) => {
+    if (event.changedTouches.length > 0) {
+      handleDrag(event.changedTouches[0].clientY);
+    }
+  };
+
+  const handleDrag = (endY: number) => {
+    if (mouseDownY === null) return;
+    const deltaY = endY - mouseDownY;
+    setMouseDownY(null);
+
+    if (Math.abs(deltaY) < 50) return; // threshold for minimal drag distance
+
+    if (deltaY > 0) {
+      if (visibleDiv === 4) setVisibleDiv(3);
+      else if (visibleDiv === 3) setVisibleDiv(2);
+      else if (visibleDiv === 2) setVisibleDiv(1);
+      else if (visibleDiv === 1) setVisibleDiv(0);
+    } else {
+      if (visibleDiv === 0) setVisibleDiv(1);
+      else if (visibleDiv === 1) setVisibleDiv(2);
+      else if (visibleDiv === 2) setVisibleDiv(3);
+      else if (visibleDiv === 3) setVisibleDiv(4);
+    }
+  };
+
+  const handleMouseMove = (event: React.MouseEvent) => {
+    if (mouseDownY === null) return;
+    const deltaY = event.clientY - mouseDownY;
+    setDragDistance(deltaY);
+  };
+
+  const handleTouchMove = (event: React.TouchEvent) => {
+    if (mouseDownY === null) return;
+    const deltaY = event.touches[0].clientY - mouseDownY;
+    setDragDistance(deltaY);
+  };
+
+  useEffect(() => {
+    if (mouseDownY === null) {
+      setDragDistance(0);
+    }
+  }, [mouseDownY]);
+
   const transition = {
     type: "tween",
     duration: 1,
@@ -54,84 +121,87 @@ const IndexPage = () => {
 
   return (
     <div
-      className="w-full h-screen overflow-hidden relative"
+      className="relative w-screen h-screen overflow-hidden"
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onTouchMove={handleTouchMove}
       onWheel={handleWheel}
     >
       <AnimatePresence>
         <motion.div
-          key="A"
+          key="0"
           className="w-full h-screen bg-red-500 flex justify-center items-center absolute top-0 left-0"
           initial={{ y: "0%" }}
-          animate={{ y: visibleDiv === "A" ? "0%" : "-100%" }}
+          animate={{
+            y: visibleDiv === 0 ? "0%" : visibleDiv > 0 ? "-100%" : "-100%",
+          }}
           transition={transition}
         >
           <Home_1 />
         </motion.div>
         <motion.div
-          key="B"
+          key="1"
           className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
           initial={{ y: "100%" }}
           animate={{
-            y:
-              visibleDiv === "B" ? "0%" : visibleDiv === "C" ? "-100%" : "100%",
+            y: visibleDiv === 1 ? "0%" : visibleDiv > 1 ? "-100%" : "100%",
           }}
           transition={transition}
         >
-          <h1>2</h1>
+          <Content_1 />
         </motion.div>
         <motion.div
-          key="C"
+          key="2"
           className="w-full h-screen bg-green-500 flex justify-center items-center absolute top-0 left-0"
           initial={{ y: "100%" }}
           animate={{
-            y:
-              visibleDiv === "C" ? "0%" : visibleDiv === "D" ? "-100%" : "100%",
+            y: visibleDiv === 2 ? "0%" : visibleDiv > 2 ? "-100%" : "100%",
           }}
           transition={transition}
         >
-          <h1>3</h1>
+          <Content_1 />
         </motion.div>
         <motion.div
-          key="D"
+          key="3"
           className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
           initial={{ y: "100%" }}
-          animate={{ y: visibleDiv === "D" ? "0%" : "100%" }}
+          animate={{
+            y: visibleDiv === 3 ? "0%" : visibleDiv > 3 ? "-100%" : "100%",
+          }}
           transition={transition}
         >
           <h1>4</h1>
         </motion.div>
+        <motion.div
+          key="4"
+          className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
+          initial={{ y: "100%" }}
+          animate={{
+            y: visibleDiv === 4 ? "0%" : visibleDiv > 4 ? "-100%" : "100%",
+          }}
+          transition={transition}
+        >
+          <h1>5</h1>
+        </motion.div>
       </AnimatePresence>
 
-      <div className="absolute bottom-16 left-16 flex z-20">
+      <div className="absolute bottom-8 left-1/2 flex z-20">
         <button onClick={handleClickDown}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
-            viewBox="0 0 10 30"
+            viewBox="0 0 30 30"
             strokeWidth="2"
             stroke="white"
-            className="w-16 h-12 "
+            className="w-12 h-12 "
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-            />
-          </svg>
-        </button>
-        <button onClick={handleClickUp}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 30"
-            strokeWidth="2"
-            stroke="white"
-            className="w-16 h-12 "
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 15.75l7.5-7.5 7.5 7.5"
             />
           </svg>
         </button>

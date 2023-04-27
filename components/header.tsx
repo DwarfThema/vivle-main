@@ -19,46 +19,27 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-5 z-20 w-full  `}>
-        <div className="flex items-center px-6 py-6 xl:px-24 ">
+      <header
+        className={`fixed top-9 z-20 w-full flex items-center lg:px-24 md:px-16 sm:px-5`}
+      >
+        <div className="absolute flex items-center">
           <Image
             src={WhiteLogo}
             width={230}
             alt="VivlePark"
-            className="max-h-10 h-auto no-drag"
+            className="max-h-10 max-w-fit sm:max-h-6 sm: no-drag "
           />
         </div>
-        <div className="ml-auto flex justify-center lg:hidden">
-          <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent  dark:hover:text-accent  flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
-            <Link legacyBehavior href="https://open.kakao.com/me/Vivlepark">
-              <a id="link" target="_blank">
-                <span>Contact</span>
-              </a>
-            </Link>
-          </button>
-        </div>
-      </header>
-      <div className="ml-auto flex justify-center lg:hidden">
-        <button className="dropdown-toggle text-jacarta-700 font-display hover:text-accent  dark:hover:text-accent  flex items-center justify-between py-3.5 text-base dark:text-white lg:px-5 w-full">
+        <div className="flex justify-end z-20 w-full  text-xl  ">
           <Link legacyBehavior href="https://open.kakao.com/me/Vivlepark">
-            <a id="link" target="_blank">
-              <span>Contact</span>
+            <a id="link" target="_blank" className="">
+              <div className="text-white font-bold sm:text-base bg-black bg-opacity-25 px-2 py-[2px] rounded-lg">
+                Contact
+              </div>
             </a>
           </Link>
-          <i className="lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width={24}
-              height={24}
-              className="h-4 w-4 dark:fill-white"
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
-            </svg>
-          </i>
-        </button>
-      </div>
+        </div>
+      </header>
     </>
   );
 };
