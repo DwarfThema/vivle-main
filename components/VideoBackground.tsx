@@ -13,6 +13,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ src }) => {
         autoPlay
         muted
         loop
+        controlsList="nodownload nofullscreen"
       />
     </div>
   );
