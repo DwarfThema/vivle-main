@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex justify-end z-20 w-full text-xl">
           <Link legacyBehavior href="https://open.kakao.com/me/Vivlepark">
             <a id="link" target="_blank" className="">
-              <div className="text-white font-bold sm:text-base bg-black bg-opacity-25 px-2 py-[2px] rounded-lg">
+              <div className="text-white font-bold sm:text-base bg-black bg-opacity-10 px-2 py-[2px] rounded-lg">
                 Contact
               </div>
             </a>
