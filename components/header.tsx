@@ -14,7 +14,7 @@ const Header = () => {
           <Image
             src={WhiteLogo}
             alt="VivlePark"
-            className="w-fit max-h-10 sm:max-h-6 no-drag "
+            className="h-fit w-[150px] sm:w-[130px] no-drag "
           />
         </div>
         <div className="flex justify-end z-20 w-full text-xl">
