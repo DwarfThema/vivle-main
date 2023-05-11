@@ -8,9 +8,9 @@ const Content_1 = () => {
     <div className="bg-main-base w-screen h-screen flex justify-center items-center   no-drag">
       <VideoBackground src="/videos/MooonRabbit_Web.mp4" />
       <div className="w-full h-full absolute bg-gradient-to-r from-blackOpa via-blackNext  to-transparent" />
-      <div className="z-10 w-10/12 h-4/6  text-white">
+      <div className="z-10 w-10/12 h-[50%]  text-white">
         {/* 본문 */}
-        <div className="mt-20">
+        <div>
           <Image
             src={Logo_CultureOrg}
             alt="SupporterLogo"
