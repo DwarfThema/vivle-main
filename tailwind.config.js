@@ -6,18 +6,16 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: "300px",
+      sm: "0px",
       md: "760px",
       lg: "1025px",
       xl: "1202px",
     },
-    fontFamily: {
-      display: ['"CalSans-SemiBold"', "sans-serif"],
-      body: ['"DM Sans"', "sans-serif"],
-    },
     colors: {
       white: "#FFFFFF",
       black: "#000000",
+      blackOpa: "rgb(0 0 0 / 0.8)",
+      blackNext: "rgb(0 0 0 / 0.1)",
       main: {
         base: "#2D31FA",
         deeper: "#051367",

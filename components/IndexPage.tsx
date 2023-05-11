@@ -173,7 +173,7 @@ const IndexPage = () => {
           }}
           transition={transition}
         >
-          <h1>4</h1>
+          <Content_1 />
         </motion.div>
         <motion.div
           key="4"
@@ -184,7 +184,7 @@ const IndexPage = () => {
           }}
           transition={transition}
         >
-          <h1>5</h1>
+          <Content_1 />
         </motion.div>
       </AnimatePresence>
 
