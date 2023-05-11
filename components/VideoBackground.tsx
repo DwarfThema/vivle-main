@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface VideoBackgroundProps {
   src: string;
+  onLoaded?: () => void;
 }
 
-const VideoBackground: React.FC<VideoBackgroundProps> = ({ src }) => {
+const VideoBackground: React.FC<VideoBackgroundProps> = ({ src, onLoaded }) => {
   return (
     <div className="fixed inset-0 z-0">
       <video
         className="absolute inset-0 w-full h-full object-cover overflow-hidden"
         src={src}
+        onLoadedData={() => {
+          console.log("done");
+        }}
         autoPlay
         muted
         loop

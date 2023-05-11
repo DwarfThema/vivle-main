@@ -2,11 +2,18 @@ import Image from "next/image";
 import VideoBackground from "../VideoBackground";
 import Logo_CultureOrg from "../../public/images/Extral_Logos/Logo_CurtuleOrg.png";
 import Link from "next/link";
+import { useState } from "react";
 
-const Content_1 = () => {
+interface ContentsProps {
+  onMainLoading?: () => void;
+}
+const Content_1: React.FC<ContentsProps> = ({ onMainLoading }) => {
   return (
     <div className="bg-main-base w-screen h-screen flex justify-center items-center   no-drag">
-      <VideoBackground src="/videos/MooonRabbit_Web.mp4" />
+      <VideoBackground
+        src="/videos/MooonRabbit_Web.mp4"
+        onLoaded={onMainLoading}
+      />
       <div className="w-full h-full absolute bg-gradient-to-r from-blackOpa via-blackNext  to-transparent" />
       <div className="z-10 w-10/12 h-[50%]  text-white">
         {/* 본문 */}

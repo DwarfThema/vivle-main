@@ -2,8 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Home_1 from "./pages/home_1";
 import Content_1 from "./pages/content_1";
+import { log } from "console";
 
 const IndexPage = () => {
+  const [loading, setLoading] = useState(true);
+
+  const handleVideoLoaded = () => {
+    setLoading(false);
+    console.log("done");
+  };
+
   const [visibleDiv, setVisibleDiv] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [mouseDownY, setMouseDownY] = useState<number | null>(null);
@@ -120,93 +128,95 @@ const IndexPage = () => {
   };
 
   return (
-    <div
-      className="relative w-screen h-screen overflow-hidden"
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-      onTouchMove={handleTouchMove}
-      onWheel={handleWheel}
-    >
-      <AnimatePresence>
-        <motion.div
-          key="0"
-          className="w-full h-screen bg-red-500 flex justify-center items-center absolute top-0 left-0"
-          initial={{ y: "0%" }}
-          animate={{
-            y: visibleDiv === 0 ? "0%" : visibleDiv > 0 ? "-100%" : "-100%",
-          }}
-          transition={transition}
-        >
-          <Home_1 />
-        </motion.div>
-        <motion.div
-          key="1"
-          className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
-          initial={{ y: "100%" }}
-          animate={{
-            y: visibleDiv === 1 ? "0%" : visibleDiv > 1 ? "-100%" : "100%",
-          }}
-          transition={transition}
-        >
-          <Content_1 />
-        </motion.div>
-        <motion.div
-          key="2"
-          className="w-full h-screen bg-green-500 flex justify-center items-center absolute top-0 left-0"
-          initial={{ y: "100%" }}
-          animate={{
-            y: visibleDiv === 2 ? "0%" : visibleDiv > 2 ? "-100%" : "100%",
-          }}
-          transition={transition}
-        >
-          <Content_1 />
-        </motion.div>
-        <motion.div
-          key="3"
-          className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
-          initial={{ y: "100%" }}
-          animate={{
-            y: visibleDiv === 3 ? "0%" : visibleDiv > 3 ? "-100%" : "100%",
-          }}
-          transition={transition}
-        >
-          <Content_1 />
-        </motion.div>
-        <motion.div
-          key="4"
-          className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
-          initial={{ y: "100%" }}
-          animate={{
-            y: visibleDiv === 4 ? "0%" : visibleDiv > 4 ? "-100%" : "100%",
-          }}
-          transition={transition}
-        >
-          <Content_1 />
-        </motion.div>
-      </AnimatePresence>
-
-      <div className="absolute bottom-8 left-1/2 flex z-20">
-        <button onClick={handleClickDown}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 30 30"
-            strokeWidth="2"
-            stroke="white"
-            className="w-12 h-12 "
+    <>
+      <div
+        className="relative w-screen h-screen overflow-hidden"
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+        onWheel={handleWheel}
+      >
+        <AnimatePresence>
+          <motion.div
+            key="0"
+            className="w-full h-screen bg-red-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "0%" }}
+            animate={{
+              y: visibleDiv === 0 ? "0%" : visibleDiv > 0 ? "-100%" : "-100%",
+            }}
+            transition={transition}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-            />
-          </svg>
-        </button>
+            <Home_1 />
+          </motion.div>
+          <motion.div
+            key="1"
+            className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 1 ? "0%" : visibleDiv > 1 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            <Content_1 onMainLoading={handleVideoLoaded} />
+          </motion.div>
+          <motion.div
+            key="2"
+            className="w-full h-screen bg-green-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 2 ? "0%" : visibleDiv > 2 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            <Content_1 />
+          </motion.div>
+          <motion.div
+            key="3"
+            className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 3 ? "0%" : visibleDiv > 3 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            <Content_1 />
+          </motion.div>
+          <motion.div
+            key="4"
+            className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 4 ? "0%" : visibleDiv > 4 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            <Content_1 />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="absolute bottom-8 left-1/2 flex z-20">
+          <button onClick={handleClickDown}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 30 30"
+              strokeWidth="2"
+              stroke="white"
+              className="w-12 h-12 "
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
