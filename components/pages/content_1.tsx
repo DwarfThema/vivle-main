@@ -7,9 +7,9 @@ const Content_1 = () => {
   return (
     <div className="bg-main-base w-screen h-screen flex justify-center items-center   no-drag">
       <VideoBackground src="/videos/MooonRabbit_Web.mp4" />
-      {/* Add your text and other content here */}
       <div className="w-full h-full absolute bg-gradient-to-r from-blackOpa via-blackNext  to-transparent" />
       <div className="z-10 w-10/12 h-4/6  text-white">
+        {/* 본문 */}
         <div className="mt-20">
           <Image
             src={Logo_CultureOrg}
@@ -24,10 +24,10 @@ const Content_1 = () => {
           <div className="text-8xl font-semibold ">THE MOON RABBIT</div>
         </div>
         <div className="md:w-[782px] mt-7">
-          <div className="text-lg font-extralight ">
-            2023년 '토끼의 해'를 기념한 메타버스 콘텐츠입니다. 메타버스 플랫폼
+          <div className="text-lg font-extralight">
+            2023년 `토끼의 해`를 기념한 메타버스 콘텐츠입니다. 메타버스 플랫폼
             VRChat을 이용한 2개의 월드로 구성하였습니다. 스토리 월드에서는
-            한국의 정월대보름 문화 '달집태우기'와 '달토끼 전설'을 주제로 한
+            한국의 정월대보름 문화 `달집태우기`와 `달토끼 전설`을 주제로 한
             이야기를 즐길 수 있으며, 로비 월드에서는 연날리기, 딱지치기 등의
             다양한 전통문화를 체험할 수 있습니다.
           </div>
@@ -55,7 +55,6 @@ const Content_1 = () => {
                 </button>
               </a>
             </Link>
-
             <Link legacyBehavior href="https://youtu.be/TUyd61nuCjo">
               <a id="link" target="_blank">
                 <button className="w-[140px] h-[50px] bg-white bg-opacity-30 border-2 rounded-3xl font-bold ml-4 text-center">
