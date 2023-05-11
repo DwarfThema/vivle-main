@@ -11,12 +11,11 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ src, onLoaded }) => {
       <video
         className="absolute inset-0 w-full h-full object-cover overflow-hidden"
         src={src}
-        onLoadedData={() => {
-          console.log("done");
-        }}
+        onLoadedData={onLoaded}
         autoPlay
         muted
         loop
+        playsInline
         controlsList="nodownload nofullscreen"
       />
     </div>

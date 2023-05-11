@@ -129,6 +129,11 @@ const IndexPage = () => {
 
   return (
     <>
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center z-50 bg-white w-screen h-screen">
+          <p>Loading...</p>
+        </div>
+      )}
       <div
         className="relative w-screen h-screen overflow-hidden"
         onMouseDown={handleMouseDown}
