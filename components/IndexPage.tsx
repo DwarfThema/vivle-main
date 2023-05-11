@@ -5,11 +5,10 @@ import Content_1 from "./pages/content_1";
 import { log } from "console";
 
 const IndexPage = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const handleVideoLoaded = () => {
     setLoading(false);
-    console.log("done");
   };
 
   const [visibleDiv, setVisibleDiv] = useState(0);

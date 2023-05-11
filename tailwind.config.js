@@ -11,19 +11,23 @@ module.exports = {
       lg: "1025px",
       xl: "1202px",
     },
-    colors: {
-      white: "#FFFFFF",
-      black: "#000000",
-      blackOpa: "rgb(0 0 0 / 0.8)",
-      blackNext: "rgb(0 0 0 / 0.1)",
-      main: {
-        base: "#2D31FA",
-        deeper: "#051367",
-        light: "#5D8BF4",
-        lighter: "#DFF6FF",
-      },
-    },
     extend: {
+      colors: {
+        white: "#FFFFFF",
+        black: "#000000",
+        blackOpa: "rgb(0 0 0 / 0.8)",
+        blackNext: "rgb(0 0 0 / 0.1)",
+        main: {
+          base: "#2D31FA",
+          deeper: "#051367",
+          light: "#5D8BF4",
+          lighter: "#DFF6FF",
+        },
+      },
+      screens: {
+        height750: { raw: "(max-height: 750px)" },
+        height650: { raw: "(max-height: 700px)" },
+      },
       userDrag: {
         none: "none",
       },
@@ -49,4 +53,5 @@ module.exports = {
       addUtilities(newUtilities);
     },
   ],
+  extend: {},
 };
