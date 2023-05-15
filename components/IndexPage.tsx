@@ -146,7 +146,7 @@ const IndexPage = () => {
         <AnimatePresence>
           <motion.div
             key="0"
-            className="w-full h-screen bg-red-500 flex justify-center items-center absolute top-0 left-0"
+            className="w-full bg-red-500 flex justify-center items-center absolute top-0 left-0"
             initial={{ y: "0%" }}
             animate={{
               y: visibleDiv === 0 ? "0%" : visibleDiv > 0 ? "-100%" : "-100%",
@@ -157,7 +157,7 @@ const IndexPage = () => {
           </motion.div>
           <motion.div
             key="1"
-            className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
+            className="w-full bg-blue-500 flex justify-center items-center absolute top-0 left-0"
             initial={{ y: "100%" }}
             animate={{
               y: visibleDiv === 1 ? "0%" : visibleDiv > 1 ? "-100%" : "100%",
