@@ -10,6 +10,7 @@ const IndexPage = () => {
 
   const handleVideoLoaded = () => {
     setLoading(false);
+    console.log("video");
   };
 
   const [visibleDiv, setVisibleDiv] = useState(0);

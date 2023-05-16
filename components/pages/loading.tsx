@@ -69,7 +69,7 @@ const LoadingPage = () => {
         </svg>
         <div className="flex text-center text-white text-opacity-70 mt-6">
           로딩중입니다. <br />
-          PC환경에서 접속하길 권장드립니다.
+          PC환경에서 접속을 권장합니다.
         </div>
       </div>
     </>
