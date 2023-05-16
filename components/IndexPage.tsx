@@ -14,6 +14,7 @@ const IndexPage = () => {
 
   const handleVideoLoaded = () => {
     console.log("video");
+    setLoading(false);
   };
 
   // mouse Click event
