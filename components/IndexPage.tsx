@@ -19,6 +19,10 @@ const IndexPage = () => {
 
   // mouse Click event
   const handleClickDown = () => {
+    if (isScrolling) return;
+    setIsScrolling(true);
+    setTimeout(() => setIsScrolling(false), 1000);
+
     if (visibleDiv === 0) setVisibleDiv(1);
     else if (visibleDiv === 1) setVisibleDiv(2);
     else if (visibleDiv === 2) setVisibleDiv(3);
@@ -66,18 +70,35 @@ const IndexPage = () => {
   // drag n drop Event (desktop / mobile)
 
   const handleMouseDown = (event: React.MouseEvent) => {
+    event.preventDefault();
+    if (isScrolling) return;
+    setIsScrolling(true);
+    setTimeout(() => setIsScrolling(false), 200);
+
     setMouseDownY(event.clientY);
   };
 
   const handleMouseUp = (event: React.MouseEvent) => {
+    event.preventDefault();
+    if (isScrolling) return;
+    setIsScrolling(true);
+    setTimeout(() => setIsScrolling(false), 200);
     handleDrag(event.clientY);
   };
 
   const handleTouchStart = (event: React.TouchEvent) => {
+    event.preventDefault();
+    if (isScrolling) return;
+    setIsScrolling(true);
+    setTimeout(() => setIsScrolling(false), 200);
     setMouseDownY(event.touches[0].clientY);
   };
 
   const handleTouchEnd = (event: React.TouchEvent) => {
+    event.preventDefault();
+    if (isScrolling) return;
+    setIsScrolling(true);
+    setTimeout(() => setIsScrolling(false), 200);
     if (event.changedTouches.length > 0) {
       handleDrag(event.changedTouches[0].clientY);
     }
@@ -128,7 +149,7 @@ const IndexPage = () => {
   };
 
   return (
-    <>
+    <div className="bg-main-base">
       <div
         className="relative w-screen h-screen overflow-hidden"
         onMouseDown={handleMouseDown}
@@ -221,7 +242,7 @@ const IndexPage = () => {
           </svg>
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -15,23 +15,23 @@ const LoadingPage = () => {
           x="0px"
           y="0px"
           viewBox="0 0 100 100"
-          enable-background="new 0 0 100 100"
+          enableBackground="new 0 0 100 100"
         >
           <circle
             fill="none"
             stroke="#fff"
-            stroke-width="5"
-            stroke-miterlimit="10"
+            strokeWidth="5"
+            strokeMiterlimit="10"
             cx="50"
             cy="50"
             r="48"
           />
           <line
             fill="none"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke="#fff"
-            stroke-width="5"
-            stroke-miterlimit="10"
+            strokeWidth="5"
+            strokeMiterlimit="10"
             x1="50"
             y1="50"
             x2="85"
@@ -48,10 +48,10 @@ const LoadingPage = () => {
           </line>
           <line
             fill="none"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke="#fff"
-            stroke-width="5"
-            stroke-miterlimit="10"
+            strokeWidth="5"
+            strokeMiterlimit="10"
             x1="50"
             y1="50"
             x2="49.5"
