@@ -9,7 +9,7 @@ interface ContentsProps {
 }
 const Content_1: React.FC<ContentsProps> = ({ onMainLoading }) => {
   return (
-    <div className="bg-main-base w-screen h-screen flex justify-center lg:items-center md:items-end sm:items-end   no-drag">
+    <div className="bg-main-base w-screen  flex justify-center lg:items-center md:items-end sm:items-end   no-drag">
       <VideoBackground
         src="/videos/MooonRabbit_Web.mp4"
         onLoaded={onMainLoading}

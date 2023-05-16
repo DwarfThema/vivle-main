@@ -4,10 +4,10 @@ import React from "react";
 const LoadingPage = () => {
   return (
     <>
-      <div className="bg-main-base w-screen h-screen flex justify-center items-center flex-col  no-drag">
+      <div className="bg-main-base w-screen h-real-screen min-h-real-screen flex justify-center items-center flex-col  no-drag">
         <svg
-          width="100px"
-          height="100px"
+          width="50px"
+          height="50px"
           display="inline-block"
           version="1.1"
           id="L2"
@@ -20,7 +20,7 @@ const LoadingPage = () => {
           <circle
             fill="none"
             stroke="#fff"
-            stroke-width="4"
+            stroke-width="5"
             stroke-miterlimit="10"
             cx="50"
             cy="50"
@@ -30,7 +30,7 @@ const LoadingPage = () => {
             fill="none"
             stroke-linecap="round"
             stroke="#fff"
-            stroke-width="4"
+            stroke-width="5"
             stroke-miterlimit="10"
             x1="50"
             y1="50"
@@ -50,7 +50,7 @@ const LoadingPage = () => {
             fill="none"
             stroke-linecap="round"
             stroke="#fff"
-            stroke-width="4"
+            stroke-width="5"
             stroke-miterlimit="10"
             x1="50"
             y1="50"

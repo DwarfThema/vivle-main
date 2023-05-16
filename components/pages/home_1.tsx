@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Logo from "../../public/images/logo_double_wt.png";
 import { motion } from "framer-motion";
+import setScreenHeight from "../setScreenHeight";
+import { useEffect } from "react";
 
 const Home_1 = () => {
   return (
