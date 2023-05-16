@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Home_1 from "./pages/home_1";
 import Content_1 from "./pages/content_1";
-import { log } from "console";
 import LoadingPage from "./pages/loading";
 
 const IndexPage = () => {
@@ -13,7 +12,6 @@ const IndexPage = () => {
   const [dragDistance, setDragDistance] = useState(0);
 
   const handleVideoLoaded = () => {
-    console.log("video");
     setLoading(false);
   };
 
