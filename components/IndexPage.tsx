@@ -6,7 +6,7 @@ import { log } from "console";
 import LoadingPage from "./pages/loading";
 
 const IndexPage = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleVideoLoaded = () => {
     setLoading(false);
@@ -129,11 +129,6 @@ const IndexPage = () => {
 
   return (
     <>
-      {loading && (
-        <div className="absolute inset-0 flex items-center justify-center z-40 bg-white w-screen h-screen">
-          <LoadingPage />
-        </div>
-      )}
       <div
         className="relative w-screen h-screen overflow-hidden"
         onMouseDown={handleMouseDown}
@@ -165,6 +160,11 @@ const IndexPage = () => {
             }}
             transition={transition}
           >
+            {loading && (
+              <div className="inset-0 absolute flex items-center justify-center z-40 bg-white w-screen h-full">
+                <LoadingPage />
+              </div>
+            )}
             <Content_1 onMainLoading={handleVideoLoaded} />
           </motion.div>
           <motion.div

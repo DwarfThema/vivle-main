@@ -4,7 +4,7 @@ import React from "react";
 const LoadingPage = () => {
   return (
     <>
-      <div className="bg-main-base w-screen h-real-screen min-h-real-screen flex justify-center items-center flex-col  no-drag">
+      <div className="bg-main-base w-screen h-screen flex justify-center items-center flex-col  no-drag">
         <svg
           width="50px"
           height="50px"
@@ -67,6 +67,10 @@ const LoadingPage = () => {
             />
           </line>
         </svg>
+        <div className="flex text-center text-white text-opacity-70 mt-6">
+          로딩중입니다. <br />
+          PC환경에서 접속하길 권장드립니다.
+        </div>
       </div>
     </>
   );
