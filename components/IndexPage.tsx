@@ -22,9 +22,7 @@ const IndexPage = () => {
     setTimeout(() => setIsScrolling(false), 1000);
 
     if (visibleDiv === 0) setVisibleDiv(1);
-    else if (visibleDiv === 1) setVisibleDiv(2);
-    else if (visibleDiv === 2) setVisibleDiv(3);
-    else if (visibleDiv === 3) setVisibleDiv(4);
+    else if (visibleDiv === 1) setVisibleDiv(0);
   };
 
   const handleClickUp = () => {
@@ -42,14 +40,8 @@ const IndexPage = () => {
 
     if (event.deltaY > 0) {
       if (visibleDiv === 0) setVisibleDiv(1);
-      else if (visibleDiv === 1) setVisibleDiv(2);
-      else if (visibleDiv === 2) setVisibleDiv(3);
-      else if (visibleDiv === 3) setVisibleDiv(4);
     } else {
-      if (visibleDiv === 4) setVisibleDiv(3);
-      else if (visibleDiv === 3) setVisibleDiv(2);
-      else if (visibleDiv === 2) setVisibleDiv(1);
-      else if (visibleDiv === 1) setVisibleDiv(0);
+      if (visibleDiv === 1) setVisibleDiv(0);
     }
   };
 
@@ -105,15 +97,9 @@ const IndexPage = () => {
     if (Math.abs(deltaY) < 50) return; // threshold for minimal drag distance
 
     if (deltaY > 0) {
-      if (visibleDiv === 4) setVisibleDiv(3);
-      else if (visibleDiv === 3) setVisibleDiv(2);
-      else if (visibleDiv === 2) setVisibleDiv(1);
-      else if (visibleDiv === 1) setVisibleDiv(0);
+      if (visibleDiv === 1) setVisibleDiv(0);
     } else {
       if (visibleDiv === 0) setVisibleDiv(1);
-      else if (visibleDiv === 1) setVisibleDiv(2);
-      else if (visibleDiv === 2) setVisibleDiv(3);
-      else if (visibleDiv === 3) setVisibleDiv(4);
     }
   };
 
@@ -180,39 +166,6 @@ const IndexPage = () => {
               </div>
             )}
             <Content_1 onMainLoading={handleVideoLoaded} />
-          </motion.div>
-          <motion.div
-            key="2"
-            className="w-full h-screen bg-green-500 flex justify-center items-center absolute top-0 left-0"
-            initial={{ y: "100%" }}
-            animate={{
-              y: visibleDiv === 2 ? "0%" : visibleDiv > 2 ? "-100%" : "100%",
-            }}
-            transition={transition}
-          >
-            <Content_1 />
-          </motion.div>
-          <motion.div
-            key="3"
-            className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
-            initial={{ y: "100%" }}
-            animate={{
-              y: visibleDiv === 3 ? "0%" : visibleDiv > 3 ? "-100%" : "100%",
-            }}
-            transition={transition}
-          >
-            <Content_1 />
-          </motion.div>
-          <motion.div
-            key="4"
-            className="w-full h-screen bg-yellow-500 flex justify-center items-center absolute top-0 left-0"
-            initial={{ y: "100%" }}
-            animate={{
-              y: visibleDiv === 4 ? "0%" : visibleDiv > 4 ? "-100%" : "100%",
-            }}
-            transition={transition}
-          >
-            <Content_1 />
           </motion.div>
         </AnimatePresence>
       </div>
