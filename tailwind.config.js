@@ -11,13 +11,7 @@ module.exports = {
       lg: "1025px",
       xl: "1202px",
     },
-    minHeight: {
-      "real-screen": "calc(var(--vh) * 100)",
-    },
     extend: {
-      height: {
-        "real-screen": "calc(var(--vh) * 100)",
-      },
       colors: {
         white: "#FFFFFF",
         black: "#000000",
