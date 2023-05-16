@@ -39,7 +39,6 @@ const IndexPage = () => {
 
   // wheel Event
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-    event.preventDefault();
     if (isScrolling) return;
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 1000);
@@ -71,7 +70,6 @@ const IndexPage = () => {
   // drag n drop Event (desktop / mobile)
 
   const handleMouseDown = (event: React.MouseEvent) => {
-    event.preventDefault();
     if (isScrolling) return;
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 200);
@@ -80,7 +78,6 @@ const IndexPage = () => {
   };
 
   const handleMouseUp = (event: React.MouseEvent) => {
-    event.preventDefault();
     if (isScrolling) return;
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 200);
@@ -88,7 +85,6 @@ const IndexPage = () => {
   };
 
   const handleTouchStart = (event: React.TouchEvent) => {
-    event.preventDefault();
     if (isScrolling) return;
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 200);
@@ -96,7 +92,6 @@ const IndexPage = () => {
   };
 
   const handleTouchEnd = (event: React.TouchEvent) => {
-    event.preventDefault();
     if (isScrolling) return;
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 200);

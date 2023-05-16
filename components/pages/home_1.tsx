@@ -9,7 +9,7 @@ const Home_1 = () => {
     <>
       <div className="bg-main-base w-screen h-screen flex justify-center items-center  no-drag">
         <div className="lg:w-[1100px] md:w-[650px] sm:w-[350px]  no-drag">
-          <Image className=" no-drag" alt="" src={Logo} />
+          <Image className=" no-drag" alt="" src={Logo} priority />
         </div>
         <motion.div
           className={`z-10 bg-[#fffa65] h-7 w-7 mt-[200px] lg:mt-[150px] 
