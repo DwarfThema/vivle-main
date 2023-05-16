@@ -7,16 +7,14 @@ import LoadingPage from "./pages/loading";
 
 const IndexPage = () => {
   const [loading, setLoading] = useState(true);
-
-  const handleVideoLoaded = () => {
-    setLoading(false);
-    console.log("video");
-  };
-
   const [visibleDiv, setVisibleDiv] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [mouseDownY, setMouseDownY] = useState<number | null>(null);
   const [dragDistance, setDragDistance] = useState(0);
+
+  const handleVideoLoaded = () => {
+    console.log("video");
+  };
 
   // mouse Click event
   const handleClickDown = () => {
