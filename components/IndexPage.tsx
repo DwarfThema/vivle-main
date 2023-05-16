@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Home_1 from "./pages/home_1";
 import Content_1 from "./pages/content_1";
 import { log } from "console";
+import LoadingPage from "./pages/loading";
 
 const IndexPage = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleVideoLoaded = () => {
     setLoading(false);
@@ -129,8 +130,8 @@ const IndexPage = () => {
   return (
     <>
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center z-50 bg-white w-screen h-screen">
-          <p>Loading...</p>
+        <div className="absolute inset-0 flex items-center justify-center z-40 bg-white w-screen h-screen">
+          <LoadingPage />
         </div>
       )}
       <div
@@ -200,25 +201,25 @@ const IndexPage = () => {
             <Content_1 />
           </motion.div>
         </AnimatePresence>
+      </div>
 
-        <div className="absolute bottom-8 left-1/2 flex z-20">
-          <button onClick={handleClickDown}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 30 30"
-              strokeWidth="2"
-              stroke="white"
-              className="w-12 h-12 "
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </button>
-        </div>
+      <div className="absolute bottom-8 w-screen flex justify-center z-20">
+        <button onClick={handleClickDown}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 30 30"
+            strokeWidth="2"
+            stroke="white"
+            className="w-10 h-10 block"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </button>
       </div>
     </>
   );

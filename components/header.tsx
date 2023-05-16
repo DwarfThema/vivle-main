@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-9 z-20 w-full flex items-center lg:px-24 md:px-16 sm:px-5`}
+        className={`fixed top-9 z-50 w-full flex items-center lg:px-24 md:px-16 sm:px-5`}
       >
         <div className="absolute flex items-center">
           <Image
