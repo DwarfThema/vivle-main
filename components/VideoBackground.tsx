@@ -5,11 +5,7 @@ interface VideoBackgroundProps {
   onLoaded?: () => void;
 }
 
-const VideoBackground: React.FC<VideoBackgroundProps> = ({ src }) => {
-  const onLoaded = () => {
-    console.log("video");
-  };
-
+const VideoBackground: React.FC<VideoBackgroundProps> = ({ src, onLoaded }) => {
   return (
     <div className="fixed inset-0 z-0">
       <video
