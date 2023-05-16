@@ -22,7 +22,7 @@ export default function Layout({
         <meta name="description" content={desc} />
         <meta name="keyword" content={keyword} />
         <meta content="//www.VIVLEPARK.com/" property="og:url" />
-        <meta content="/apple-touch-icon-114x114a.png" property="og:image" />
+        <meta content="/ogImage.png" property="og:image" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="400" />
         <meta
