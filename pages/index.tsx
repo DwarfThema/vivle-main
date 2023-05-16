@@ -13,7 +13,7 @@ export default function Home() {
     return () => window.removeEventListener("resize", setScreenHeight);
   }, []);
   return (
-    <Layout seoTitle="VivlePark">
+    <Layout seoTitle="VIVLE PARK">
       <Meta />
       <PointerFollower />
       <IndexPage />
