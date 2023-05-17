@@ -14,7 +14,7 @@ const Content_1: React.FC<ContentsProps> = ({ onMainLoading }) => {
         src="/videos/MooonRabbit_Web.mp4"
         onLoaded={onMainLoading}
       />
-      <div className="w-full h-screen absolute bg-gradient-to-r from-blackOpa via-blackNext  to-transparent no-drag" />
+      <div className="w-full h-screen absolute md:bg-gradient-to-r sm:bg-gradient-to-t from-blackOpa via-blackNext  to-transparent no-drag" />
       {/* 본문 */}
       <div className="z-10 w-10/12 lg:mb-0 md:mb-[100px]  sm:mb-[110px] text-white">
         <div>
