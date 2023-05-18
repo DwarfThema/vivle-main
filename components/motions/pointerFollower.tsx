@@ -30,7 +30,7 @@ const PointerFollower = () => {
     <>
       <motion.div
         ref={mouseFollower}
-        className=" h-9 w-9 absolute rounded-full xl:border-white border-dotted xl:border-2 lg:border-0 z-50 pointer-events-none"
+        className=" h-9 w-9 absolute rounded-full xl:border-white border-dotted xl:border-2 lg:border-0 z-50 pointer-events-none lg:block md:hidden"
         animate={{ x, y }}
         transition={{
           type: "spring",
