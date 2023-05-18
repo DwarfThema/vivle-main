@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 
 import { RefObject, useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 function UseFollowPointer(ref: RefObject<HTMLElement>) {
   const [point, setPoint] = useState({ x: 0, y: 0 });
@@ -28,16 +29,18 @@ const PointerFollower = () => {
   const { x, y } = UseFollowPointer(mouseFollower);
   return (
     <>
-      <motion.div
-        ref={mouseFollower}
-        className=" h-9 w-9 absolute rounded-full xl:border-white border-dotted xl:border-2 lg:border-0 z-50 pointer-events-none lg:block md:hidden"
-        animate={{ x, y }}
-        transition={{
-          type: "spring",
-          damping: 50,
-          stiffness: 400,
-        }}
-      />
+      {isMobile ? null : (
+        <motion.div
+          ref={mouseFollower}
+          className=" h-9 w-9 absolute rounded-full xl:border-white border-dotted xl:border-2 lg:border-0 z-50 pointer-events-none "
+          animate={{ x, y }}
+          transition={{
+            type: "spring",
+            damping: 50,
+            stiffness: 400,
+          }}
+        />
+      )}
     </>
   );
 };
