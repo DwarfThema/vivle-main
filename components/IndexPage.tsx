@@ -60,33 +60,32 @@ const IndexPage = () => {
 
   const handleMouseDown = (event: React.MouseEvent) => {
     if (isScrolling) return;
+    setMouseDownY(event.clientY);
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 500);
-
-    setMouseDownY(event.clientY);
   };
 
   const handleMouseUp = (event: React.MouseEvent) => {
     if (isScrolling) return;
+    handleDrag(event.clientY);
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 500);
-    handleDrag(event.clientY);
   };
 
   const handleTouchStart = (event: React.TouchEvent) => {
     if (isScrolling) return;
+    setMouseDownY(event.touches[0].clientY);
     setIsScrolling(true);
     setTimeout(() => setIsScrolling(false), 500);
-    setMouseDownY(event.touches[0].clientY);
   };
 
   const handleTouchEnd = (event: React.TouchEvent) => {
     if (isScrolling) return;
-    setIsScrolling(true);
-    setTimeout(() => setIsScrolling(false), 500);
     if (event.changedTouches.length > 0) {
       handleDrag(event.changedTouches[0].clientY);
     }
+    setIsScrolling(true);
+    setTimeout(() => setIsScrolling(false), 500);
   };
 
   const handleDrag = (endY: number) => {
