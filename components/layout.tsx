@@ -8,29 +8,45 @@ interface LayoutProps {
   desc?: string;
 }
 
-export default function Layout({
-  children,
-  seoTitle,
-  keyword,
-  desc,
-}: LayoutProps) {
+export default function Layout({ children, keyword }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>{`비블파크 || VIVLEPARK`}</title>
+        <title>{`비블파크 VIVLEPARK`}</title>
         <link rel="icon" href="/favicon.png" />
-        <meta name="description" content={desc} />
+        <meta
+          name="description"
+          content="비블파크는 메타버스, XR공간 제작 전문기업 입니다."
+        />
+
+        {/* <!-- Facebook Meta Tags --> */}
         <meta name="keyword" content={keyword} />
+        <meta property="og:url" content="https://www.vivlepark.com" />
         <meta property="og:type" content="website" />
-        <meta content="//www.VIVLEPARK.com/" property="og:url" />
+        <meta property="og:title" content="비블파크 VIVLEPARK" />
         <meta
           property="og:description"
-          content="메타버스 공간 제작 전문기업 비블파크입니다."
+          content="비블파크는 메타버스, XR공간 제작 전문기업 입니다."
         />
+        <meta property="og:image" content="/ogImage.png" />
         <meta property="og:site_name" content="비블파크 VIVLEPARK" />
-        <meta content="/ogImage.png" property="og:image" />
         <meta property="og:image:width" content="800" />
         <meta property="og:image:height" content="400" />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="vivlepark.com" />
+        <meta property="twitter:url" content="https://www.vivlepark.com" />
+        <meta name="twitter:title" content="비블파크 VIVLEPARK" />
+        <meta
+          name="twitter:description"
+          content="비블파크는 메타버스, XR공간 제작 전문기업 입니다."
+        />
+        <meta
+          name="twitter:image"
+          content="https://vivlepark.com/ogImage.png"
+        />
+
         <meta
           name="naver-site-verification"
           content="9df6b1efcfb6d871812a2f38381af8b288e82262"

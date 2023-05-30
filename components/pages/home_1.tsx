@@ -1,15 +1,18 @@
 import Image from "next/image";
-import Logo from "../../public/images/logo_double_wt.png";
+import logo_double_wt from "../../public/images/logo_double_wt.png";
 import { motion } from "framer-motion";
-import setScreenHeight from "../setScreenHeight";
-import { useEffect } from "react";
 
 const Home_1 = () => {
   return (
     <>
       <div className="bg-main-base w-screen h-screen flex justify-center items-center  no-drag">
         <div className="lg:w-[1100px] md:w-[650px] sm:w-[350px]  no-drag">
-          <Image className=" no-drag" alt="" src={Logo} priority />
+          <Image
+            className=" no-drag"
+            alt="VivlePark Logo"
+            src={logo_double_wt}
+            priority
+          />
         </div>
         <motion.div
           className={`z-10 bg-[#fffa65] h-7 w-7 mt-[200px] lg:mt-[150px] 
