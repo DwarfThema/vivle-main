@@ -41,12 +41,8 @@ const Content_2: React.FC<ContentsProps> = ({ onMainLoading }) => {
           </div>
           <div className="lg:mt-3 md:mt-3 sm:mt-2 flex ">
             <Link legacyBehavior href="https://youtu.be/J017vwQd2KA">
-              <a
-                id="link"
-                target="_blank"
-                className="lg:block md:hidden sm:hidden"
-              >
-                <button className="w-[150px] h-[50px] bg-white bg-opacity-60 border-2 rounded-3xl font-bold text-center">
+              <a id="link" target="_blank">
+                <button className="md:w-[140px] md:h-[50px]  md:text-base   sm:w-[100px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
                   FULL VIDEO
                 </button>
               </a>
