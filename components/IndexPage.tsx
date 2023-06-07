@@ -14,12 +14,12 @@ const IndexPage = () => {
 
   const handleVideoLoaded = () => {
     setLoading(false);
+    console.log("Have a Great Day 🐳🏝️");
   };
 
-  useEffect(() => {
+  /*   useEffect(() => {
     setLoading(false);
-    console.log("Have a Great Day 🐳🏝️");
-  }, [handleVideoLoaded]);
+  }, [handleVideoLoaded]); */
 
   // mouse Click event
   const handleClickDown = () => {
