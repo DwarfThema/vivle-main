@@ -29,21 +29,11 @@ const Content_2: React.FC<ContentsProps> = ({ onMainLoading }) => {
         <div className="lg:w-[782px] md:w-fit  height650:hidden  lg:mt-7 md:mt-3 md:block sm:hidden ">
           <div className="text-lg font-extralight">
             2021 `Modern Room`은 버츄얼 인플루언서 방 콘셉트로 만든 VRChat 기반
-            월드 맵입니다. 해당 월드를 통해 버츄얼 크리에이터 '김피클'의 다양한
+            월드 맵입니다. 해당 월드를 통해 버츄얼 크리에이터 `김피클`의 다양한
             튜토리얼 콘텐츠 진행에 몰입감을 더해줄 수 있는 요소를 더해
             인테리어를 구성했습니다. 앞으로도 피클이의 다양한 튜토리얼 콘텐츠를
             기대해주세요.
           </div>
-          {/*           <div className="mt-7 font-semibold text-xl lg:block md:hidden height750:hidden">
-            SYNOPSYS
-          </div> */}
-          {/*           <div className="mt-1 lg:block md:hidden height750:hidden">
-            절망에 빠진 세상, 움직일 수 없는 사람들 사이에서 체험자는 유일하게
-            움직일 수 있는 사람이 되어 달토끼와 함께 세상을 구합니다.
-            달집태우기를 완성하고 소원을 비는 과정을 통해 체험자로 하여금
-            자아효능감을 느끼고 잊고 있던 자신의 소망을 떠올릴 수 있는 계기를
-            마련하고자 하였습니다.
-          </div> */}
         </div>
         <div className="lg:mt-3 md:mt-0 sm:mt-0">
           <div className="lg:block md:hidden sm:hidden">
@@ -61,13 +51,6 @@ const Content_2: React.FC<ContentsProps> = ({ onMainLoading }) => {
                 </button>
               </a>
             </Link>
-            {/*             <Link legacyBehavior href="">
-              <a id="link" target="_blank">
-                <button className="md:w-[140px] md:h-[50px] lg:ml-4 md:text-base   sm:w-[100px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
-              
-                </button>
-              </a>
-            </Link> */}
           </div>
         </div>
       </div>
