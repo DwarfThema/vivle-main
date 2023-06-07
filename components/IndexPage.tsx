@@ -14,7 +14,7 @@ const IndexPage = () => {
 
   const handleVideoLoaded = () => {
     setLoading(false);
-    console.log("on");
+    console.log("Have a Great Day 🐳🏝️");
   };
 
   // mouse Click event
