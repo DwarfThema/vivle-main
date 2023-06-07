@@ -12,6 +12,8 @@ const IndexPage = () => {
   const [mouseDownY, setMouseDownY] = useState<number | null>(null);
   const [dragDistance, setDragDistance] = useState(0);
 
+  console.log(handleVideoLoaded);
+
   const handleVideoLoaded = () => {
     setLoading(false);
     console.log("Have a Great Day 🐳🏝️");
@@ -166,7 +168,7 @@ const IndexPage = () => {
                 <LoadingPage />
               </div>
             )}
-            <Content_1 onMainLoading={handleVideoLoaded} />
+            <Content_1 onMainLoading={() => handleVideoLoaded} />
           </motion.div>
           <motion.div
             key="2"

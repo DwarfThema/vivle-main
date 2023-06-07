@@ -8,8 +8,6 @@ interface ContentsProps {
   onMainLoading?: () => void;
 }
 const Content_1: React.FC<ContentsProps> = ({ onMainLoading }) => {
-  console.log(onMainLoading);
-
   return (
     <div className="bg-main-base w-screen h-screen flex justify-center lg:items-center md:items-end sm:items-end   no-drag">
       <VideoBackground
