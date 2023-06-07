@@ -3,9 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Home_1 from "./pages/home_1";
 import Content_1 from "./pages/content_1";
 import LoadingPage from "./pages/loading";
+import Content_2 from "./pages/content_2";
 
 const IndexPage = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [visibleDiv, setVisibleDiv] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [mouseDownY, setMouseDownY] = useState<number | null>(null);
@@ -22,7 +23,8 @@ const IndexPage = () => {
     setTimeout(() => setIsScrolling(false), 1000);
 
     if (visibleDiv === 0) setVisibleDiv(1);
-    else if (visibleDiv === 1) setVisibleDiv(0);
+    else if (visibleDiv === 1) setVisibleDiv(2);
+    else if (visibleDiv === 2) setVisibleDiv(1);
   };
 
   const handleClickUp = () => {
@@ -40,8 +42,10 @@ const IndexPage = () => {
 
     if (event.deltaY > 0) {
       if (visibleDiv === 0) setVisibleDiv(1);
+      else if (visibleDiv === 1) setVisibleDiv(2);
     } else {
       if (visibleDiv === 1) setVisibleDiv(0);
+      else if (visibleDiv === 2) setVisibleDiv(1);
     }
   };
 
@@ -88,8 +92,10 @@ const IndexPage = () => {
 
     if (deltaY > 0) {
       if (visibleDiv === 1) setVisibleDiv(0);
+      else if (visibleDiv === 2) setVisibleDiv(1);
     } else {
       if (visibleDiv === 0) setVisibleDiv(1);
+      else if (visibleDiv === 1) setVisibleDiv(2);
     }
   };
 
@@ -156,6 +162,22 @@ const IndexPage = () => {
               </div>
             )}
             <Content_1 onMainLoading={handleVideoLoaded} />
+          </motion.div>
+          <motion.div
+            key="2"
+            className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 2 ? "0%" : visibleDiv > 2 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            {loading && (
+              <div className="inset-0 absolute flex items-center justify-center z-40 bg-white w-screen h-full">
+                <LoadingPage />
+              </div>
+            )}
+            <Content_2 />
           </motion.div>
         </AnimatePresence>
       </div>
