@@ -28,7 +28,7 @@ const Content_2: React.FC<ContentsProps> = ({ onMainLoading }) => {
         </div>
         <div className="lg:w-[782px] md:w-fit  height650:hidden  lg:mt-7 md:mt-3 md:block sm:hidden ">
           <div className="text-lg font-extralight">
-            2021 ‘Modern Room’은 버츄얼 인플루언서 방 콘셉트로 만든 VRChat 기반
+            2021 `Modern Room`은 버츄얼 인플루언서 방 콘셉트로 만든 VRChat 기반
             월드 맵입니다. 해당 월드를 통해 버츄얼 크리에이터 '김피클'의 다양한
             튜토리얼 콘텐츠 진행에 몰입감을 더해줄 수 있는 요소를 더해
             인테리어를 구성했습니다. 앞으로도 피클이의 다양한 튜토리얼 콘텐츠를
