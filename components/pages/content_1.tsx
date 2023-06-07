@@ -33,7 +33,7 @@ const Content_1: React.FC<ContentsProps> = ({ onMainLoading }) => {
           </div>
         </div>
         <div className="lg:w-[782px] md:w-fit  height650:hidden  lg:mt-7 md:mt-3 md:block sm:hidden ">
-          <div className="text-lg font-extralight">
+          <div className="text-base font-extralight">
             2023년 `토끼의 해`를 기념한 메타버스 콘텐츠입니다. 메타버스 플랫폼
             VRChat을 이용한 2개의 월드로 구성하였습니다. 스토리 월드에서는
             한국의 정월대보름 문화 `달집태우기`와 `달토끼 전설`을 주제로 한
@@ -55,7 +55,7 @@ const Content_1: React.FC<ContentsProps> = ({ onMainLoading }) => {
           <div className="lg:block md:hidden sm:hidden">
             하단 링크를 선택해 달토끼와 함께 절망에 빠진 세상을 구해주세요!
           </div>
-          <div className="lg:mt-7 md:mt-3 sm:mt-2 flex ">
+          <div className="lg:mt-3 md:mt-3 sm:mt-2 flex ">
             <Link
               legacyBehavior
               href="https://vrchat.com/home/launch?worldId=wrld_65a4deb0-1313-4c54-aeb6-161c91bd9795"
