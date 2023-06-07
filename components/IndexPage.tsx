@@ -168,7 +168,11 @@ const IndexPage = () => {
                 <LoadingPage />
               </div>
             )}
-            <Content_1 onMainLoading={() => handleVideoLoaded} />
+            <Content_1
+              onMainLoading={() => {
+                handleVideoLoaded();
+              }}
+            />
           </motion.div>
           <motion.div
             key="2"
