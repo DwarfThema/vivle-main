@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../public/images/logo_double_wt.png";
-import WhiteLogo from "../public/images/logo_single.png";
+import logo_single from "../public/images/logo_single.png";
 
 const Header = () => {
   return (
@@ -12,9 +11,10 @@ const Header = () => {
       >
         <div className="absolute flex items-center">
           <Image
-            src={WhiteLogo}
-            alt="VivlePark"
+            src={logo_single}
+            alt="VivlePark Logo"
             className="h-fit w-[150px] sm:w-[130px] no-drag "
+            priority
           />
         </div>
         <div className="flex justify-end z-20 w-full text-xl">
