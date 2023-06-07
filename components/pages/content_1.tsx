@@ -9,11 +9,12 @@ interface ContentsProps {
 }
 const Content_1: React.FC<ContentsProps> = ({ onMainLoading }) => {
   console.log(onMainLoading);
+
   return (
     <div className="bg-main-base w-screen h-screen flex justify-center lg:items-center md:items-end sm:items-end   no-drag">
       <VideoBackground
         src="/videos/MooonRabbit_Web.mp4"
-        onLoaded={() => onMainLoading}
+        onLoaded={onMainLoading}
       />
       <div className="w-full h-screen absolute md:bg-gradient-to-r sm:bg-gradient-to-t from-blackOpa via-blackNext  to-transparent no-drag" />
       {/* 본문 */}
