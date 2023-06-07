@@ -6,6 +6,8 @@ interface VideoBackgroundProps {
 }
 
 const VideoBackground: React.FC<VideoBackgroundProps> = ({ src, onLoaded }) => {
+  console.log(onLoaded);
+
   return (
     <div className="fixed inset-0 z-0">
       <video
