@@ -18,7 +18,8 @@ const IndexPage = () => {
 
   useEffect(() => {
     console.log("Have a Great Day 🐳🏝️");
-  }, [setLoading]);
+    setLoading(false);
+  }, [loading]);
 
   // mouse Click event
   const handleClickDown = () => {
