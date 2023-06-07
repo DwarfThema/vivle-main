@@ -17,10 +17,6 @@ const IndexPage = () => {
     console.log("Have a Great Day 🐳🏝️");
   };
 
-  /*   useEffect(() => {
-    setLoading(false);
-  }, [handleVideoLoaded]); */
-
   // mouse Click event
   const handleClickDown = () => {
     if (isScrolling) return;
