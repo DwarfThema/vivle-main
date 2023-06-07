@@ -14,8 +14,11 @@ const IndexPage = () => {
 
   const handleVideoLoaded = () => {
     setLoading(false);
-    console.log("Have a Great Day 🐳🏝️");
   };
+
+  useEffect(() => {
+    console.log("Have a Great Day 🐳🏝️");
+  }, [setLoading]);
 
   // mouse Click event
   const handleClickDown = () => {

@@ -4,16 +4,10 @@ import Logo_CultureOrg from "../../public/images/Extral_Logos/Logo_CurtuleOrg.pn
 import Link from "next/link";
 import { useState } from "react";
 
-interface ContentsProps {
-  onMainLoading?: () => void;
-}
-const Content_2: React.FC<ContentsProps> = ({ onMainLoading }) => {
+const Content_2: React.FC = () => {
   return (
     <div className="bg-main-base w-screen h-screen flex justify-center lg:items-center md:items-end sm:items-end   no-drag">
-      <VideoBackground
-        src="/videos/ModernRoom_Web.mp4"
-        onLoaded={onMainLoading}
-      />
+      <VideoBackground src="/videos/ModernRoom_Web.mp4" />
       <div className="w-full h-screen absolute md:bg-gradient-to-r sm:bg-gradient-to-t from-blackOpa via-blackNext  to-transparent no-drag" />
       {/* 본문 */}
       <div className="z-10 w-10/12 lg:mb-0 md:mb-[100px]  sm:mb-[110px] text-white">
