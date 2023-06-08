@@ -6,13 +6,12 @@ module.exports = {
   sitemapSize: 7000,
   changefreq: "daily",
   priority: 1,
-  exclude: ["/home/**"],
   robotsTxtOptions: {
     policies: [
+      { userAgent: "*", allow: "/" },
       {
         userAgent: "*",
-        allow: "/",
-        disallow: ["/home"],
+        disallow: ["/home/*"],
       },
     ],
   },
