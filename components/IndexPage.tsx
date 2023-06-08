@@ -12,11 +12,6 @@ const IndexPage = () => {
   const [mouseDownY, setMouseDownY] = useState<number | null>(null);
   const [dragDistance, setDragDistance] = useState(0);
 
-  const handleVideoLoaded = () => {
-    setLoading(false);
-    console.log("Have a Great Day 🐳🏝️");
-  };
-
   // mouse Click event
   const handleClickDown = () => {
     if (isScrolling) return;
@@ -164,7 +159,8 @@ const IndexPage = () => {
             )}
             <Content_1
               onMainLoading={() => {
-                handleVideoLoaded();
+                setLoading(false);
+                console.log("Have a Great Day 🐳🏝️");
               }}
             />
           </motion.div>
