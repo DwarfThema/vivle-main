@@ -24,10 +24,13 @@ export default function Layout({ children, keyword }: LayoutProps) {
         <meta property="og:url" content="https://www.vivlepark.com" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="비블파크 VIVLEPARK" />
+        <meta name="thumbnail" content="apple-touch-icon-72x72.png" />
         <meta
           property="og:description"
           content="비블파크는 메타버스, XR공간 제작 전문기업 입니다."
         />
+        <meta name="robots" content="max-snippet:50, max-image-preview:large" />
+
         <meta property="og:image" content="/ogImage.png" />
         <meta property="og:site_name" content="비블파크 VIVLEPARK" />
         <meta property="og:image:width" content="800" />

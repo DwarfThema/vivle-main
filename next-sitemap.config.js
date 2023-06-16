@@ -5,14 +5,15 @@ module.exports = {
   generateRobotsTxt: true,
   sitemapSize: 7000,
   changefreq: "daily",
-  priority: 1,
-  exclude: ["/home/**"],
+  priority: 0.7,
+  generateRobotsTxt: true,
+  exclude: ["/home/*"],
   robotsTxtOptions: {
     policies: [
+      { userAgent: "*", allow: "/" },
       {
         userAgent: "*",
-        allow: "/",
-        disallow: ["/home"],
+        disallow: ["/home/*", "/item/*", "case-studies", "partners"],
       },
     ],
   },
