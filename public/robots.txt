@@ -6,8 +6,8 @@ Allow: /
 User-agent: *
 Disallow: /home/*
 Disallow: /item/*
-Disallow: case-studies
-Disallow: partners
+Disallow: /case-studies/*
+Disallow: /partners/*
 
 # Host
 Host: https://www.vivlepark.com
