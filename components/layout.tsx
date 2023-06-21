@@ -12,7 +12,7 @@ export default function Layout({ children, keyword }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>{`비블파크 VIVLEPARK`}</title>
+        <title>{`비블파크`}</title>
         <link rel="icon" href="/favicon.png" />
         <meta
           name="description"
