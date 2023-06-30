@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo_single from "../public/images/logo_single.png";
+import vivleparkLogo from "../public/apple-touch-icon-114x114a.png";
 
 const Header = () => {
   return (
@@ -11,10 +12,15 @@ const Header = () => {
       >
         <div className="absolute flex items-center">
           <Image
+            src={vivleparkLogo}
+            alt="VivlePark"
+            className="h-fit w-[0px] sm:w-[0px] no-drag "
+            priority
+          />
+          <Image
             src={logo_single}
             alt="VivlePark Logo"
             className="h-fit w-[150px] sm:w-[130px] no-drag "
-            priority
           />
         </div>
         <div className="flex justify-end z-20 w-full text-xl">
