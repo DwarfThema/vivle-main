@@ -7,17 +7,16 @@ const Home_1 = () => {
   return (
     <>
       <div className="bg-main-base w-screen h-screen flex justify-center items-center  no-drag">
-        <Image
-          src={vivleparkLogo}
-          alt="VivlePark Logo"
-          className="h-fit w-[0px] sm:w-[0px] no-drag "
-          priority
-        />
         <div className="lg:w-[1100px] md:w-[650px] sm:w-[350px]  no-drag">
           <Image
             className=" no-drag"
             alt="VivlePark Main"
             src={logo_double_wt}
+          />
+          <Image
+            src={vivleparkLogo}
+            alt="VivlePark Logo"
+            className="h-fit w-[0px] sm:w-[0px] no-drag "
             priority
           />
         </div>
