@@ -13,13 +13,13 @@ const Header = () => {
         <div className="absolute flex items-center">
           <Image
             src={vivleparkLogo}
-            alt="VivlePark"
+            alt="VivlePark Logo"
             className="h-fit w-[0px] sm:w-[0px] no-drag "
             priority
           />
           <Image
             src={logo_single}
-            alt="VivlePark Logo"
+            alt="VivlePark header"
             className="h-fit w-[150px] sm:w-[130px] no-drag "
           />
         </div>
