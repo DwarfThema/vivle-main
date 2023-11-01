@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Header from "./header";
+import { Analytics } from "@vercel/analytics/react";
+import GoogleAnalytics from "./googleAnalytic";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,7 +16,9 @@ export default function Layout({ children }: LayoutProps) {
         <title>{`비블파크 VIVLEPARK`}</title>
       </Head>
       <Header />
+      <GoogleAnalytics />
       {children}
+      <Analytics />
     </>
   );
 }
