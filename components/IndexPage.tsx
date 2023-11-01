@@ -6,7 +6,7 @@ import LoadingPage from "./pages/loading";
 import Content_2 from "./pages/content_2";
 
 const IndexPage = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [visibleDiv, setVisibleDiv] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [mouseDownY, setMouseDownY] = useState<number | null>(null);
@@ -160,7 +160,6 @@ const IndexPage = () => {
             <Content_1
               onMainLoading={() => {
                 setLoading(false);
-                console.log("Have a Great Day 🐳🏝️");
               }}
             />
           </motion.div>

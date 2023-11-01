@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "./header";
+import { Analytics } from "@vercel/analytics/react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,6 +16,7 @@ export default function Layout({ children }: LayoutProps) {
       </Head>
       <Header />
       {children}
+      <Analytics />
     </>
   );
 }
