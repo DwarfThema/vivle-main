@@ -52,7 +52,7 @@ const Content_NakWha: React.FC<ContentsProps> = ({ onMainLoading }) => {
             하단 링크를 선택해 ‘낙화’의 모든 콘텐츠를 즐겨보세요!
           </div>
           <div className="lg:mt-3 md:mt-3 sm:mt-2 flex ">
-            <Link legacyBehavior href="https://youtu.be/J017vwQd2KA">
+            <Link legacyBehavior href="https://youtu.be/DnubQrhnsQ8">
               <a id="link" target="_blank" className="lg:block ">
                 <button className="md:w-[140px] md:h-[50px] lg:ml-0 md:text-base sm:w-[100px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
                   FULL VIDEO
