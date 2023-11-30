@@ -15,7 +15,7 @@ const Content_NakWha: React.FC<ContentsProps> = ({ onMainLoading }) => {
       <div className="w-full h-screen absolute md:bg-gradient-to-r sm:bg-gradient-to-t from-blackOpa via-blackNext  to-transparent no-drag" />
       {/* 본문 */}
       <div className="z-10 w-10/12 lg:mb-0 md:mb-[100px]  sm:mb-[110px] text-white">
-        <div className="flex">
+        <div className="flex items-center">
           <Image
             src={Logo_CultureOrg}
             alt="SupporterLogo"
