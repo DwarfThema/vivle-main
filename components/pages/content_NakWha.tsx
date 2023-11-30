@@ -14,8 +14,8 @@ const Content_NakWha: React.FC<ContentsProps> = ({ onMainLoading }) => {
       <VideoBackground src="/videos/Nakhwa_Web.mp4" onLoaded={onMainLoading} />
       <div className="w-full h-screen absolute md:bg-gradient-to-r sm:bg-gradient-to-t from-blackOpa via-blackNext  to-transparent no-drag" />
       {/* 본문 */}
-      <div className="z-10 w-10/12 lg:mb-0 md:mb-[100px]  sm:mb-[110px] text-white">
-        <div className="flex items-center">
+      <div className="z-10 w-10/12 lg:mb-0 md:mb-[100px] sm:mb-[110px] text-white">
+        <div className="lg:flex lg:items-center sm:flex-col sm:items-start ">
           <Image
             src={Logo_CultureOrg}
             alt="SupporterLogo"
@@ -25,7 +25,7 @@ const Content_NakWha: React.FC<ContentsProps> = ({ onMainLoading }) => {
           <Image
             src={Logo_ArkoOrg}
             alt="SupporterLogo"
-            className="h-fit lg:w-[300px] md:w-[300px] sm:w-[150px] ml-8 no-drag"
+            className="h-fit lg:w-[300px] md:w-[300px] sm:w-[150px] my-2 no-drag"
           />
         </div>
         <div>
@@ -52,20 +52,20 @@ const Content_NakWha: React.FC<ContentsProps> = ({ onMainLoading }) => {
             하단 링크를 선택해 ‘낙화’의 모든 콘텐츠를 즐겨보세요!
           </div>
           <div className="lg:mt-3 md:mt-3 sm:mt-2 flex ">
-            <Link
-              legacyBehavior
-              href="https://youtu.be/YxQSoBrg0ug?si=3ROwgrLeFDybknF5"
-            >
-              <a id="link" target="_blank">
-                <button className="md:w-[160px] md:h-[50px] lg:ml-0 md:text-base   sm:w-[120px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
-                  SOUND TRAILER
+            <Link legacyBehavior href="https://youtu.be/J017vwQd2KA">
+              <a id="link" target="_blank" className="lg:block ">
+                <button className="md:w-[140px] md:h-[50px] lg:ml-0 md:text-base sm:w-[100px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
+                  FULL VIDEO
                 </button>
               </a>
             </Link>
-
             <Link legacyBehavior href="https://vrch.at/mr3te92c">
-              <a id="link" target="_blank">
-                <button className="md:w-[160px] md:h-[50px] lg:ml-4 md:text-base   sm:w-[120px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
+              <a
+                id="link"
+                target="_blank"
+                className="lg:block md:hidden sm:hidden"
+              >
+                <button className="w-[150px] h-[50px] bg-white lg:ml-4 bg-opacity-60 border-2 rounded-3xl font-bold text-center">
                   VRChat WORLD
                 </button>
               </a>
