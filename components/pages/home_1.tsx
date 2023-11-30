@@ -6,10 +6,10 @@ import vivleparkLogo from "../../public/apple-touch-icon-114x114a.png";
 const Home_1 = () => {
   return (
     <>
-      <div className="bg-main-base w-screen h-screen flex justify-center items-center  no-drag">
+      <div className="bg-main-base w-screen h-screen flex justify-center items-center no-drag">
         <Image
           src={vivleparkLogo}
-          className="z-50 opacity-0 absolute"
+          className="z-50 opacity-0 absolute no-drag"
           alt="VivlePark Logo"
           priority
         />
