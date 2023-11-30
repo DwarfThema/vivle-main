@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Home_1 from "./pages/home_1";
-import Content_1 from "./pages/content_1";
 import LoadingPage from "./pages/loading";
-import Content_2 from "./pages/content_2";
+import Content_Moon from "./pages/content_Moon";
+import Content_MordernRoom from "./pages/content_MordernRoom";
+import Content_NakWha from "./pages/content_NakWha";
 
 const IndexPage = () => {
   const [loading, setLoading] = useState(false);
@@ -20,7 +21,8 @@ const IndexPage = () => {
 
     if (visibleDiv === 0) setVisibleDiv(1);
     else if (visibleDiv === 1) setVisibleDiv(2);
-    else if (visibleDiv === 2) setVisibleDiv(1);
+    else if (visibleDiv === 2) setVisibleDiv(3);
+    else if (visibleDiv === 3) setVisibleDiv(0);
   };
 
   const handleClickUp = () => {
@@ -39,9 +41,12 @@ const IndexPage = () => {
     if (event.deltaY > 0) {
       if (visibleDiv === 0) setVisibleDiv(1);
       else if (visibleDiv === 1) setVisibleDiv(2);
+      else if (visibleDiv === 2) setVisibleDiv(3);
+      else if (visibleDiv === 3) setVisibleDiv(0);
     } else {
       if (visibleDiv === 1) setVisibleDiv(0);
       else if (visibleDiv === 2) setVisibleDiv(1);
+      else if (visibleDiv === 3) setVisibleDiv(2);
     }
   };
 
@@ -89,9 +94,12 @@ const IndexPage = () => {
     if (deltaY > 0) {
       if (visibleDiv === 1) setVisibleDiv(0);
       else if (visibleDiv === 2) setVisibleDiv(1);
+      else if (visibleDiv === 3) setVisibleDiv(2);
     } else {
       if (visibleDiv === 0) setVisibleDiv(1);
       else if (visibleDiv === 1) setVisibleDiv(2);
+      else if (visibleDiv === 2) setVisibleDiv(3);
+      else if (visibleDiv === 3) setVisibleDiv(0);
     }
   };
 
@@ -157,7 +165,7 @@ const IndexPage = () => {
                 <LoadingPage />
               </div>
             )}
-            <Content_1
+            <Content_NakWha
               onMainLoading={() => {
                 setLoading(false);
               }}
@@ -177,7 +185,27 @@ const IndexPage = () => {
                 <LoadingPage />
               </div>
             )}
-            <Content_2 />
+            <Content_Moon
+              onMainLoading={() => {
+                setLoading(false);
+              }}
+            />
+          </motion.div>
+          <motion.div
+            key="3"
+            className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 3 ? "0%" : visibleDiv > 3 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            {loading && (
+              <div className="inset-0 absolute flex items-center justify-center z-40 bg-white w-screen h-full">
+                <LoadingPage />
+              </div>
+            )}
+            <Content_MordernRoom />
           </motion.div>
         </AnimatePresence>
       </div>
