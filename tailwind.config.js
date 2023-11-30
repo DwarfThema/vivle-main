@@ -25,6 +25,7 @@ module.exports = {
         },
       },
       screens: {
+        sm: "0px",
         height750: { raw: "(max-height: 750px)" },
         height650: { raw: "(max-height: 700px)" },
       },
