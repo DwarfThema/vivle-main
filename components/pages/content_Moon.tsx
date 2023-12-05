@@ -26,7 +26,7 @@ const Content_Moon: React.FC<ContentsProps> = ({ onMainLoading }) => {
         </div>
         <div>
           <div className="md:text-xl md:mt-2 sm:text-sm sm:mt-0 font-light mt-2">
-            2023 메타버스 콘텐츠 아이디어 우수사례 선정
+            2022 메타버스 콘텐츠 아이디어 우수사례 선정
           </div>
           <div className="md:text-8xl sm:text-3xl font-semibold ">
             THE MOON RABBIT
@@ -56,6 +56,13 @@ const Content_Moon: React.FC<ContentsProps> = ({ onMainLoading }) => {
             하단 링크를 선택해 달토끼와 함께 절망에 빠진 세상을 구해주세요!
           </div>
           <div className="lg:mt-3 md:mt-3 sm:mt-2 flex ">
+            <Link legacyBehavior href="https://youtu.be/TUyd61nuCjo">
+              <a id="link" target="_blank">
+                <button className="md:w-[140px] md:h-[50px] lg:ml-0 md:text-base sm:w-[100px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
+                  FULL VIDEO
+                </button>
+              </a>
+            </Link>
             <Link
               legacyBehavior
               href="https://vrchat.com/home/launch?worldId=wrld_65a4deb0-1313-4c54-aeb6-161c91bd9795"
@@ -65,15 +72,8 @@ const Content_Moon: React.FC<ContentsProps> = ({ onMainLoading }) => {
                 target="_blank"
                 className="lg:block md:hidden sm:hidden"
               >
-                <button className="w-[150px] h-[50px] bg-white bg-opacity-60 border-2 rounded-3xl font-bold text-center">
-                  STORY WORLD
-                </button>
-              </a>
-            </Link>
-            <Link legacyBehavior href="https://youtu.be/TUyd61nuCjo">
-              <a id="link" target="_blank">
-                <button className="md:w-[140px] md:h-[50px] lg:ml-4 md:text-base   sm:w-[100px] sm:h-[30px] sm:ml-0 sm:text-xs  bg-white bg-opacity-30 border-2 rounded-3xl font-bold text-center ">
-                  FULL VIDEO
+                <button className="w-[150px] h-[50px] bg-white lg:ml-4 bg-opacity-60 border-2 rounded-3xl font-bold text-center">
+                  VRChat WORLD
                 </button>
               </a>
             </Link>
