@@ -26,7 +26,7 @@ const Content_Moon: React.FC<ContentsProps> = ({ onMainLoading }) => {
         </div>
         <div>
           <div className="md:text-xl md:mt-2 sm:text-sm sm:mt-0 font-light mt-2">
-            2023 메타버스 콘텐츠 아이디어 우수사례 선정
+            2022 메타버스 콘텐츠 아이디어 우수사례 선정
           </div>
           <div className="md:text-8xl sm:text-3xl font-semibold ">
             THE MOON RABBIT
