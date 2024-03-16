@@ -5,6 +5,8 @@ import LoadingPage from "./pages/loading";
 import Content_Moon from "./pages/content_Moon";
 import Content_MordernRoom from "./pages/content_MordernRoom";
 import Content_NakWha from "./pages/content_NakWha";
+import Content_ThemeMuseum from "./pages/content_ThemeMuseum";
+import Content_EBS from "./pages/content_EBS";
 
 const IndexPage = () => {
   const [loading, setLoading] = useState(false);
@@ -22,14 +24,18 @@ const IndexPage = () => {
     if (visibleDiv === 0) setVisibleDiv(1);
     else if (visibleDiv === 1) setVisibleDiv(2);
     else if (visibleDiv === 2) setVisibleDiv(3);
-    else if (visibleDiv === 3) setVisibleDiv(0);
+    else if (visibleDiv === 3) setVisibleDiv(4);
+    else if (visibleDiv === 4) setVisibleDiv(5);
+    else if (visibleDiv === 5) setVisibleDiv(0);
   };
 
   const handleClickUp = () => {
-    if (visibleDiv === 4) setVisibleDiv(3);
-    else if (visibleDiv === 3) setVisibleDiv(2);
-    else if (visibleDiv === 2) setVisibleDiv(1);
+    if (visibleDiv === 0) setVisibleDiv(0);
     else if (visibleDiv === 1) setVisibleDiv(0);
+    else if (visibleDiv === 2) setVisibleDiv(1);
+    else if (visibleDiv === 3) setVisibleDiv(2);
+    else if (visibleDiv === 4) setVisibleDiv(3);
+    else if (visibleDiv === 5) setVisibleDiv(4);
   };
 
   // wheel Event
@@ -42,11 +48,15 @@ const IndexPage = () => {
       if (visibleDiv === 0) setVisibleDiv(1);
       else if (visibleDiv === 1) setVisibleDiv(2);
       else if (visibleDiv === 2) setVisibleDiv(3);
-      else if (visibleDiv === 3) setVisibleDiv(0);
+      else if (visibleDiv === 3) setVisibleDiv(4);
+      else if (visibleDiv === 4) setVisibleDiv(5);
+      else if (visibleDiv === 5) setVisibleDiv(0);
     } else {
       if (visibleDiv === 1) setVisibleDiv(0);
       else if (visibleDiv === 2) setVisibleDiv(1);
       else if (visibleDiv === 3) setVisibleDiv(2);
+      else if (visibleDiv === 4) setVisibleDiv(3);
+      else if (visibleDiv === 5) setVisibleDiv(4);
     }
   };
 
@@ -95,11 +105,15 @@ const IndexPage = () => {
       if (visibleDiv === 1) setVisibleDiv(0);
       else if (visibleDiv === 2) setVisibleDiv(1);
       else if (visibleDiv === 3) setVisibleDiv(2);
+      else if (visibleDiv === 4) setVisibleDiv(3);
+      else if (visibleDiv === 5) setVisibleDiv(4);
     } else {
       if (visibleDiv === 0) setVisibleDiv(1);
       else if (visibleDiv === 1) setVisibleDiv(2);
       else if (visibleDiv === 2) setVisibleDiv(3);
-      else if (visibleDiv === 3) setVisibleDiv(0);
+      else if (visibleDiv === 3) setVisibleDiv(4);
+      else if (visibleDiv === 4) setVisibleDiv(5);
+      else if (visibleDiv === 5) setVisibleDiv(0);
     }
   };
 
@@ -185,7 +199,7 @@ const IndexPage = () => {
                 <LoadingPage />
               </div>
             )}
-            <Content_Moon
+            <Content_ThemeMuseum
               onMainLoading={() => {
                 setLoading(false);
               }}
@@ -197,6 +211,42 @@ const IndexPage = () => {
             initial={{ y: "100%" }}
             animate={{
               y: visibleDiv === 3 ? "0%" : visibleDiv > 3 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            {loading && (
+              <div className="inset-0 absolute flex items-center justify-center z-40 bg-white w-screen h-full">
+                <LoadingPage />
+              </div>
+            )}
+            <Content_Moon
+              onMainLoading={() => {
+                setLoading(false);
+              }}
+            />
+          </motion.div>
+          <motion.div
+            key="4"
+            className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 4 ? "0%" : visibleDiv > 4 ? "-100%" : "100%",
+            }}
+            transition={transition}
+          >
+            {loading && (
+              <div className="inset-0 absolute flex items-center justify-center z-40 bg-white w-screen h-full">
+                <LoadingPage />
+              </div>
+            )}
+            <Content_EBS />
+          </motion.div>
+          <motion.div
+            key="5"
+            className="w-full h-screen bg-blue-500 flex justify-center items-center absolute top-0 left-0"
+            initial={{ y: "100%" }}
+            animate={{
+              y: visibleDiv === 5 ? "0%" : visibleDiv > 5 ? "-100%" : "100%",
             }}
             transition={transition}
           >

@@ -18,7 +18,7 @@ module.exports = {
         blackOpa: "rgb(0 0 0 / 0.8)",
         blackNext: "rgb(0 0 0 / 0.1)",
         main: {
-          base: "#2D31FA",
+          base: "#000000",
           deeper: "#051367",
           light: "#5D8BF4",
           lighter: "#DFF6FF",
