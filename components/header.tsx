@@ -2,7 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo_single from "../public/images/logo_single.png";
-import vivleparkLogo from "../public/apple-touch-icon-114x114a.png";
 
 const Header = () => {
   return (
@@ -11,12 +10,6 @@ const Header = () => {
         className={`fixed top-9 z-50 w-full flex items-center lg:px-24 md:px-16 sm:px-5`}
       >
         <div className="absolute flex items-center">
-          <Image
-            src={vivleparkLogo}
-            alt="VivlePark Logo"
-            className="h-fit w-[0px] sm:w-[0px] no-drag "
-            priority
-          />
           <Image
             src={logo_single}
             alt="VivlePark header"
