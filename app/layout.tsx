@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR, Roboto, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import Header from "../components/header";
 
 const roboto = Roboto({ weight: "900", subsets: ["latin"] });
 const noto = Noto_Sans_KR({ subsets: ["latin"] });
@@ -66,6 +67,7 @@ export default function RootLayout({
     <html lang="kr">
       <body className={`${inter.className} `}>
         <Analytics />
+        <Header />
         {children}
       </body>
     </html>
