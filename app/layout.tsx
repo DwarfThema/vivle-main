@@ -68,6 +68,9 @@ export default function RootLayout({
       <body className={`${inter.className} `}>
         <Analytics />
         <Header />
+        <span className="absolute hidden">
+          비블파크는 XR 콘텐츠 제작 전문기업 입니다
+        </span>
         {children}
       </body>
     </html>
