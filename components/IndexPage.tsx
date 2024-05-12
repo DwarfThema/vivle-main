@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Home_1 from "./pages/home_1";
-import LoadingPage from "./pages/loading";
-import Content_Moon from "./pages/content_Moon";
-import Content_MordernRoom from "./pages/content_MordernRoom";
-import Content_NakWha from "./pages/content_NakWha";
-import Content_ThemeMuseum from "./pages/content_ThemeMuseum";
-import Content_EBS from "./pages/content_EBS";
+import Home_1 from "./contents/home_1";
+import LoadingPage from "./contents/loading";
+import Content_Moon from "./contents/content_Moon";
+import Content_MordernRoom from "./contents/content_MordernRoom";
+import Content_NakWha from "./contents/content_NakWha";
+import Content_ThemeMuseum from "./contents/content_ThemeMuseum";
+import Content_EBS from "./contents/content_EBS";
 
 const IndexPage = () => {
   const [loading, setLoading] = useState(false);

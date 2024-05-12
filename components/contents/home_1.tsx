@@ -1,7 +1,7 @@
 import Image from "next/image";
 import logo_double_wt from "../../public/images/logo_double_wt.png";
 import { motion } from "framer-motion";
-import vivleparkLogo from "../../public/apple-touch-icon-114x114a.png";
+import vivleparkLogo from "../../public/logo_transp.png";
 
 const Home_1 = () => {
   return (
